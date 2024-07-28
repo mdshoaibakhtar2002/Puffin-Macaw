@@ -1,0 +1,22 @@
+.input {
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: 0.575rem;
+    color: #1a202c; /* text-gray-900 */
+    border-radius: 0.175rem; /* rounded-md */
+    box-shadow: 0 0 0 1px #d1d5db; /* ring-1 ring-gray-300 */
+    background-color: #fff; /* to ensure it's visible on all backgrounds */
+    font-size: 0.875rem; /* sm:text-sm */
+    line-height: 1.25rem; /* sm:leading-6 */
+    transition: box-shadow 0.2s ease;
+}
+
+.input::placeholder {
+    color: #9ca3af; /* placeholder:text-gray-400 */
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px #9c9c9c; /* focus:ring-2 focus:ring-green-500 */
+}
