@@ -1,8 +1,12 @@
+"use client";
+import { useState } from 'react'
 import { XMarkIcon } from '@heroicons/react/20/solid'
 
 export default function Banner() {
+    const [hideBanner, setHideBanner] = useState(true)
     return (
-        <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+        <>
+        { hideBanner && <div className="absolute w-full isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
             <div
                 aria-hidden="true"
                 className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
@@ -45,9 +49,10 @@ export default function Banner() {
             <div className="flex flex-1 justify-end">
                 <button type="button" className="-m-3 p-3 focus-visible:outline-offset-[-4px]">
                     <span className="sr-only">Dismiss</span>
-                    <XMarkIcon aria-hidden="true" className="h-5 w-5 text-gray-900" />
+                    <XMarkIcon aria-hidden="true" className="h-5 w-5 text-gray-900" onClick={() => setHideBanner(!hideBanner)} />
                 </button>
             </div>
-        </div>
+        </div>}
+        </>
     )
 }

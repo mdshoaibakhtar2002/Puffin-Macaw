@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Login() {
     return (
-        <div className="w-full flex justify-center flex-col items-center h-[75vh]">
+        <div className="w-full flex justify-center flex-col items-center h-[100vh]">
             <div className="w-1/2 flex justify-center flex-col items-center p-4">
                 <div className="w-8/12">
                     <label htmlFor="price" className="block text-sm font-medium leading-6 text-gray-900">
@@ -69,8 +69,8 @@ export default function Login() {
 
                 <div className="w-8/12 mt-6 text-center">
                     <button
+                        className="block w-full rounded-md bg-gray-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-820 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-820"
                         type="submit"
-                        className="block w-full rounded-md bg-rose-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-rose-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600"
                     >
                         Create account <span aria-hidden="true">&rarr;</span>
                     </button>
