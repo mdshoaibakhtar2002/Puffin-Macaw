@@ -7,10 +7,10 @@ import styles from '../app/Custom.module.css';
 import { useState } from 'react'
 
 const navigation = [
-    { name: 'Dashboard', href: '#', current: false },
-    { name: 'Team', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Calendar', href: '#', current: true },
+    { name: 'Dashboard', href: '#', current: true },
+    { name: 'Jobs', href: '#', current: false },
+    { name: 'Practice', href: '#', current: false },
+    { name: 'Learn', href: '#', current: false },
 ]
 
 function classNames(...classes: string[]) {
@@ -18,7 +18,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function Example() {
-    const [loggedIn, setLoggedIn] = useState(true)
+    const [loggedIn, setLoggedIn] = useState(false)
     return (
         <Disclosure as="nav" className="fixed w-full z-10 isolate overflow-hidden bg-gray-900">
             <div className="px-8">
@@ -43,17 +43,17 @@ export default function Example() {
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (
-                                    <a
+                                    <Link
                                         key={item.name}
                                         href={item.href}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                            item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                            item.current ? 'bg-gray-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                             'rounded-md px-3 py-2 text-sm font-medium',
                                         )}
                                     >
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -61,10 +61,10 @@ export default function Example() {
                     {loggedIn ? <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                         <Link className="block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600" href="/login">Log in <span aria-hidden="true">&rarr;</span></Link>
                     </div> :
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                        <div className="relative inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                             <button
                                 type="button"
-                                className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                className="relative rounded-full right-20 bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                             >
                                 <span className="absolute -inset-1.5" />
                                 <span className="sr-only">View notifications</span>
@@ -72,7 +72,7 @@ export default function Example() {
                             </button>
 
                             {/* Profile dropdown */}
-                            <Menu as="div" className="relative ml-3">
+                            <Menu as="div" className="fixed ml-3">
                                 <div>
                                     <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                         <span className="absolute -inset-1.5" />
