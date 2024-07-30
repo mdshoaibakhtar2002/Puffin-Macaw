@@ -1,4 +1,4 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { RssIcon, LockOpenIcon, ServerIcon } from '@heroicons/react/20/solid'
 import Promotion from './Promotion'
 import Pricing from './Pricing'
 import Statistics from './Statistics'
@@ -10,24 +10,25 @@ import Form from './Form';
 import Team from './Team';
 import Image from "next/image";
 import Testimonials from './Testimonials';
+import Footer from './Footer';
 import img from "../../dashboard_image_1.jpg"
 const features = [
     {
-        name: 'Push to deploy.',
+        name: 'Your Next Career Opportunity Awaits: ',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: CloudArrowUpIcon,
+            'Imagine waking up every day excited to go to work, knowing that you are making a meaningful impact and growing both professionally and personally.',
+        icon: RssIcon,
     },
     {
-        name: 'SSL certificates.',
-        description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-        icon: LockClosedIcon,
+        name: 'Unlock Your Potential: ',
+        description: 'We understand that job searching can be overwhelming. That’s why we offer personalized recommendations based on your profile, interests, and experience.',
+        icon: LockOpenIcon,
     },
-    {
-        name: 'Database backups.',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: ServerIcon,
-    },
+    // {
+    //     name: 'Empowering Your Career Growth.',
+    //     description: 'We are more than just a job portal. We are your partner in career growth. Our platform provides a wealth of resources to help you succeed.',
+    //     icon: ServerIcon,
+    // },
 ]
 
 export default function Dashboard() {
@@ -39,13 +40,12 @@ export default function Dashboard() {
             <div className="overflow-hidden bg-white py-16 sm:py-16">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-                        <div className="lg:pr-8 lg:pt-4">
+                        <div className="lg:pr-8 lg:pt-1">
                             <div className="lg:max-w-lg">
-                                <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
-                                <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better workflow</p>
+                                <h2 className="text-base font-semibold leading-7 text-indigo-600">Find your dream job</h2>
+                                <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Your Journey to Success Starts Here</p>
                                 <p className="mt-6 text-lg leading-8 text-gray-600">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                                    iste dolor cupiditate blanditiis ratione.
+                                    Your ultimate destination for discovering the perfect job that aligns with your passions and career aspirations. In today's fast-paced world, finding a job that not only pays the bills but also brings fulfillment and joy can be a challenging journey.
                                 </p>
                                 <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                                     {features.map((feature) => (
@@ -71,14 +71,15 @@ export default function Dashboard() {
                 </div>
             </div>
             <Promotion />
-            <Pricing />
-            <Statistics />
-            <Newsletter />
-            <Jobcard />
-            <Collab />
-            <Form />
+            {/* <Pricing /> */}
+            {/* <Jobcard /> */}
+            {/* <Form /> */}
             <Team />
             <Testimonials />
+            {/* <Newsletter /> */}
+            <Statistics />
+            <Collab />
+            <Footer />
         </div>
 
     )

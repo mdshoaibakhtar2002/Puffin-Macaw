@@ -1,44 +1,56 @@
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import { ArrowDownOnSquareStackIcon, StarIcon,Bars2Icon, RocketLaunchIcon } from '@heroicons/react/24/outline'
+// import { ArrowDownOnSquareStackIcon } from '@heroicons/react/24/solid'
 
 const features = [
     {
-        name: 'Push to deploy',
-        description:
-            'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-        icon: CloudArrowUpIcon,
+        name: 'Believe in the Journey',
+        description:[
+            'Every journey begins with a single step, and each step brings you closer to your goal.',
+            'Embrace the process and trust that your efforts will pay off.',
+            'Each experience, whether a success or a setback, is a valuable lesson on your path.'
+        ],
+        icon: StarIcon,
     },
     {
-        name: 'SSL certificates',
-        description:
-            'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-        icon: LockClosedIcon,
+        name: 'Overcome Obstacles with Confidence',
+        description:[
+            'Challenges are opportunities in disguise; face them with courage.',
+            'Every rejection is a redirection towards a better opportunity.',
+            'Stay resilient and persistent; your dream job is worth the effort.'
+        ],
+        icon:Bars2Icon,
     },
     {
-        name: 'Simple queues',
-        description:
-            'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-        icon: ArrowPathIcon,
+        name: 'Acknowledge Your Progress',
+        description:[
+            'Celebrate every milestone, no matter how small. Each achievement is a step closer to your dream.',
+            'Each application submitted, interview attended, and connection made is progress.',
+            'Recognize and reward yourself for your hard work and dedication.'
+        ],
+        icon: ArrowDownOnSquareStackIcon,
     },
     {
-        name: 'Advanced security',
-        description:
-            'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-        icon: FingerPrintIcon,
+        name: 'Be Open to Growth and Change',
+        description:[
+            'Embrace the evolving nature of the job market with flexibility and adaptability.',
+            'Actively seek feedback and use it to refine your skills and improve your approach.',
+            'Commit to ongoing learning and upskilling to stay relevant and competitive.'
+        ],
+        icon: RocketLaunchIcon,
     },
 ]
 
 export default function Promotion() {
     return (
         <div className="bg-white py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl lg:text-center">
-                    <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
-                    <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <div className="mx-auto px-6 lg:px-8">
+                <div className="mx-auto max-w-5xl lg:text-center">
+                    <h2 className="text-base font-semibold leading-7 text-indigo-600">You're Closer Than You Think</h2>
+                    {/* <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                         Everything you need to deploy your app
-                    </p>
+                    </p> */}
                     <p className="mt-6 text-lg leading-8 text-gray-600">
-                        Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-                        pulvinar et feugiat blandit at. In mi viverra elit nunc.
+                        Remember, you are closer than you think. With the right mindset, tools, and support, you can navigate the job market with confidence and find the career that brings you fulfillment and success. We are committed to being your partner in this journey, guiding you towards your dream job and a brighter future. So, take that next step with assurance, knowing that each effort you make is bringing you one step closer to your ultimate career destination.
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -51,9 +63,16 @@ export default function Promotion() {
                                     </div>
                                     {feature.name}
                                 </dt>
-                                <dd className="mt-2 text-base leading-7 text-gray-600">{feature.description}</dd>
+                                <dd className="mt-2 text-base leading-7 text-gray-600">
+                                    <ul className="list-disc pl-5">
+                                        {feature.description.map((desc, index) => (
+                                            <li key={index}>{desc}</li>
+                                        ))}
+                                    </ul>
+                                </dd>
                             </div>
                         ))}
+
                     </dl>
                 </div>
             </div>
