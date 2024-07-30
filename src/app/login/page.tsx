@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Login() {
     return (
-        <div className="w-full flex justify-center flex-col items-center h-[90vh]">
+        <div className="w-full flex justify-center flex-col items-center h-[85vh]">
             <div className="w-1/2 flex justify-center flex-col items-center p-4">
                 <div className="w-8/12">
                     <label htmlFor="price" className="block text-sm font-medium leading-6 text-gray-900">
