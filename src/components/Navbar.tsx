@@ -25,12 +25,43 @@ import {
 import { ChevronDownIcon, ChevronUpIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const products = [
-    { name: 'Internships', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-    { name: 'Software Engineer', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-    { name: 'AI/ML Engineer', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-    { name: 'Data Engineer', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-    { name: 'DevOps', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-    { name: 'Quality Assurance', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowDownOnSquareStackIcon },
+    {
+  "name": "Internships",
+  "description": "Gain hands-on experience and kickstart your career",
+  "href": "/jobs",
+  "icon": CursorArrowRaysIcon
+},
+{
+  "name": "Software Engineer",
+  "description": "Develop and maintain cutting-edge software solutions",
+  "href": "#",
+  "icon": ChartPieIcon
+},
+{
+  "name": "AI/ML Engineer",
+  "description": "Design and implement machine learning models and AI systems",
+  "href": "#",
+  "icon": FingerPrintIcon
+},
+{
+  "name": "Data Engineer",
+  "description": "Build and optimize data pipelines and manage data architecture",
+  "href": "#",
+  "icon": SquaresPlusIcon
+},
+{
+  "name": "DevOps",
+  "description": "Ensure seamless deployment and integration of software",
+  "href": "#",
+  "icon": ArrowPathIcon
+},
+{
+  "name": "Quality Assurance",
+  "description": "Ensure the highest standards of software quality through rigorous testing",
+  "href": "#",
+  "icon": ArrowDownOnSquareStackIcon
+}
+
 ]
 const callsToAction = [
     { name: 'Watch demo', href: '#', icon: PlayCircleIcon },

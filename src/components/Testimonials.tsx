@@ -1,31 +1,295 @@
 export default function Testimonials() {
     return (
-        <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
-            <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
-            <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
-            <div className="mx-auto max-w-2xl lg:max-w-4xl">
-                {/* <img alt="" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" className="mx-auto h-12" /> */}
-                <figure className="mt-10">
-                    <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-                        <p>
-                            “Finding my dream job felt like an impossible task until I discovered [Portal Name]. The personalized job recommendations and user-friendly interface made the process incredibly smooth. Thanks, I landed a role that perfectly matches my skills and career goals!”
-                        </p>
-                    </blockquote>
-                    <figcaption className="mt-10">
-                        <img
-                            alt=""
-                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            className="mx-auto h-10 w-10 rounded-full"
-                        />
-                        <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                            <div className="font-semibold text-gray-900">Judith Black</div>
-                            <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-900">
-                                <circle r={1} cx={1} cy={1} />
-                            </svg>
-                            <div className="text-gray-600">Software Engineer</div>
+        <section id="testimonies" className="py-20 bg-slate-900">
+            <div className="max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto">
+                <div className="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100">
+                    <div className="mb-12 space-y-5 md:mb-16 md:text-center">
+                        <div
+                            className="inline-block px-3 py-1 text-sm font-semibold text-indigo-100 rounded-lg md:text-center text-cn bg-[#202c47] bg-opacity-60 hover:cursor-pointer hover:bg-opacity-40">
+                            Words from Others
                         </div>
-                    </figcaption>
-                </figure>
+                        <h1 className="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
+                            It's not just us.
+                        </h1>
+                        <p className="text-xl text-gray-100 md:text-center md:text-2xl">
+                            Here's what others have to say about us.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+                    <ul className="space-y-8">
+                        <li className="text-sm leading-6">
+                            <div className="relative group">
+                                <div
+                                    className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                                </div><a href="https://twitter.com/kanyewest" className="cursor-pointer">
+                                    <div
+                                        className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                                        <div className="flex items-center space-x-4"><img
+                                            src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg"
+                                            className="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West"/>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white">Alia siddique</h3>
+                                                <p className="text-gray-500 text-md">Sofware developer</p>
+                                            </div>
+                                        </div>
+                                        <p className="leading-normal text-gray-300 text-md">I have been passionate about developing innovative solutions since the beginning of my career. Joining this organization has allowed me to grow and hone my skills, providing me with numerous opportunities to work on cutting-edge projects and collaborate with talented professionals. The experience here has been invaluable, shaping my path as a software engineer and fueling my drive to continuously improve and contribute meaningfully to the tech community.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li className="text-sm leading-6">
+                            <div className="relative group">
+                                <div
+                                    className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                                </div><a href="https://twitter.com/tim_cook" className="cursor-pointer">
+                                    <div
+                                        className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                                        <div className="flex items-center space-x-4"><img
+                                            src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
+                                            className="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook"/>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white">Tim Cook</h3>
+                                                <p className="text-gray-500 text-md">CEO of Apple</p>
+                                            </div>
+                                        </div>
+                                        <p className="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque
+                                            fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis
+                                            aliquam malesuada bibendum.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li className="text-sm leading-6">
+                            <div className="relative group">
+                                <div
+                                    className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                                </div><a href="https://twitter.com/kanyewest" className="cursor-pointer">
+                                    <div
+                                        className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                                        <div className="flex items-center space-x-4"><img
+                                            src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg"
+                                            className="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West"/>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white">Kanye West</h3>
+                                                <p className="text-gray-500 text-md">Rapper &amp; Entrepreneur</p>
+                                            </div>
+                                        </div>
+                                        <p className="leading-normal text-gray-300 text-md">Find God.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li className="text-sm leading-6">
+                            <div className="relative group">
+                                <div
+                                    className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                                </div><a href="https://twitter.com/tim_cook" className="cursor-pointer">
+                                    <div
+                                        className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                                        <div className="flex items-center space-x-4"><img
+                                            src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
+                                            className="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook"/>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white">Tim Cook</h3>
+                                                <p className="text-gray-500 text-md">CEO of Apple</p>
+                                            </div>
+                                        </div>
+                                        <p className="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque
+                                            fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis
+                                            aliquam malesuada bibendum.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                    <ul className="hidden space-y-8 sm:block">
+                        <li className="text-sm leading-6">
+                            <div className="relative group">
+                                <div
+                                    className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                                </div><a href="https://twitter.com/paraga" className="cursor-pointer">
+                                    <div
+                                        className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                                        <div className="flex items-center space-x-4"><img
+                                            src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
+                                            className="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal"/>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white">Parag Agrawal</h3>
+                                                <p className="text-gray-500 text-md">CEO of Twitter</p>
+                                            </div>
+                                        </div>
+                                        <p className="leading-normal text-gray-300 text-md">Enim neque volutpat ac tincidunt vitae
+                                            semper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quam
+                                            pellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li className="text-sm leading-6">
+                            <div className="relative group">
+                                <div
+                                    className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                                </div><a href="https://twitter.com/tim_cook" className="cursor-pointer">
+                                    <div
+                                        className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                                        <div className="flex items-center space-x-4"><img
+                                            src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
+                                            className="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook"/>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white">Tim Cook</h3>
+                                                <p className="text-gray-500 text-md">CEO of Apple</p>
+                                            </div>
+                                        </div>
+                                        <p className="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque
+                                            fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis
+                                            aliquam malesuada bibendum.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li className="text-sm leading-6">
+                            <div className="relative group">
+                                <div
+                                    className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                                </div><a href="https://twitter.com/paraga" className="cursor-pointer">
+                                    <div
+                                        className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                                        <div className="flex items-center space-x-4"><img
+                                            src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
+                                            className="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal"/>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white">Parag Agrawal</h3>
+                                                <p className="text-gray-500 text-md">CEO of Twitter</p>
+                                            </div>
+                                        </div>
+                                        <p className="leading-normal text-gray-300 text-md">Enim neque volutpat ac tincidunt vitae
+                                            semper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quam
+                                            pellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li className="text-sm leading-6">
+                            <div className="relative group">
+                                <div
+                                    className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                                </div><a href="https://twitter.com/tim_cook" className="cursor-pointer">
+                                    <div
+                                        className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                                        <div className="flex items-center space-x-4"><img
+                                            src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
+                                            className="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook"/>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white">Tim Cook</h3>
+                                                <p className="text-gray-500 text-md">CEO of Apple</p>
+                                            </div>
+                                        </div>
+                                        <p className="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque
+                                            fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis
+                                            aliquam malesuada bibendum.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                    <ul className="hidden space-y-8 lg:block">
+                        <li className="text-sm leading-6">
+                            <div className="relative group">
+                                <div
+                                    className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                                </div><a href="https://twitter.com/satyanadella" className="cursor-pointer">
+                                    <div
+                                        className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                                        <div className="flex items-center space-x-4"><img
+                                            src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
+                                            className="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella"/>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white">Satya Nadella</h3>
+                                                <p className="text-gray-500 text-md">CEO of Microsoft</p>
+                                            </div>
+                                        </div>
+                                        <p className="leading-normal text-gray-300 text-md">Tortor dignissim convallis aenean et
+                                            tortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquam
+                                            eleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li className="text-sm leading-6">
+                            <div className="relative group">
+                                <div
+                                    className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                                </div><a href="https://twitter.com/dan_schulman" className="cursor-pointer">
+                                    <div
+                                        className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                                        <div className="flex items-center space-x-4"><img
+                                            src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg"
+                                            className="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman"/>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white">Dan Schulman</h3>
+                                                <p className="text-gray-500 text-md">CEO of PayPal</p>
+                                            </div>
+                                        </div>
+                                        <p className="leading-normal text-gray-300 text-md">Quam pellentesque nec nam aliquam sem
+                                            et tortor consequat id. Enim sit amet venenatis urna cursus.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li className="text-sm leading-6">
+                            <div className="relative group">
+                                <div
+                                    className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                                </div><a href="https://twitter.com/satyanadella" className="cursor-pointer">
+                                    <div
+                                        className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                                        <div className="flex items-center space-x-4"><img
+                                            src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
+                                            className="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella"/>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white">Satya Nadella</h3>
+                                                <p className="text-gray-500 text-md">CEO of Microsoft</p>
+                                            </div>
+                                        </div>
+                                        <p className="leading-normal text-gray-300 text-md">Tortor dignissim convallis aenean et
+                                            tortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquam
+                                            eleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li className="text-sm leading-6">
+                            <div className="relative group">
+                                <div
+                                    className="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                                </div><a href="https://twitter.com/dan_schulman" className="cursor-pointer">
+                                    <div
+                                        className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
+                                        <div className="flex items-center space-x-4"><img
+                                            src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg"
+                                            className="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman"/>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-white">Dan Schulman</h3>
+                                                <p className="text-gray-500 text-md">CEO of PayPal</p>
+                                            </div>
+                                        </div>
+                                        <p className="leading-normal text-gray-300 text-md">Quam pellentesque nec nam aliquam sem
+                                            et tortor consequat id. Enim sit amet venenatis urna cursus.</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                </div>
             </div>
         </section>
     )
