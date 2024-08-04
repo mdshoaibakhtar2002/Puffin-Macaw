@@ -79,7 +79,7 @@ export default function Dashboard() {
             {/* <Newsletter /> */}
             <Statistics />
             <Collab />
-            <Footer />
+            {/* <Footer /> */}
         </div>
 
     )

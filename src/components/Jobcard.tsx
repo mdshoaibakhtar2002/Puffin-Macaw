@@ -6,38 +6,26 @@ import {
   CurrencyDollarIcon,
   CursorArrowRaysIcon,
   MapPinIcon,
-  PencilIcon,
+  ClockIcon,
 } from '@heroicons/react/20/solid'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
 export default function Jobcard() {
   return (
-    <div className="lg:flex flex-col lg:items-center lg:justify-between mb-8 border-2 rounded border-solid border-slate-50 px-8 py-6 cursor-pointer transform transition shadow-md duration-7000 hover:bg-gray-50 hover:scale-105 hover:rounded">
+    <div className="lg:flex flex-col lg:items-center lg:justify-between mb-4 border-2 rounded border-solid border-slate-50 px-8 py-6 cursor-pointer transform transition shadow-md duration-7000 hover:rounded hover:border-slate-200">
       <div className="lg:flex w-full lg:justify-between">
+      <div className="lg:flex w-full">
+      <img className="inline-block h-10 w-10 rounded ring-2 ring-white" src="https://static.wixstatic.com/media/d2252d_4c1a1bda6a774bd68f789c0770fd16e5~mv2.png" alt=""/>
+      <div className="flex flex-col ml-3">
         <h2 className="text-xl font-bold leading-7 text-gray-900 sm:truncate sm:text-2xl sm:tracking-tight">
-          Back End Developer
+          Fullstack developer
         </h2>
+        <div className="mt-1 flex items-center text-sm text-gray-500">
+          Let's find it
+        </div>
+        </div>
+              </div>
         <div className="mt-5 flex lg:ml-4 lg:mt-0">
-          {/* <span className="hidden sm:block">
-          <button
-            type="button"
-            className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-          >
-            <PencilIcon aria-hidden="true" className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" />
-            Edit
-          </button>
-        </span> */}
-
-          {/* <span className="ml-3 hidden sm:block">
-          <button
-            type="button"
-            className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-          >
-            <LinkIcon aria-hidden="true" className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" />
-            View
-          </button>
-        </span> */}
-
           <span className="sm:ml-3">
             <button
               type="button"
@@ -47,33 +35,9 @@ export default function Jobcard() {
               Apply
             </button>
           </span>
-
-          {/* Dropdown */}
-          <Menu as="div" className="relative ml-3 sm:hidden">
-            <MenuButton className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:ring-gray-400">
-              More
-              <ChevronDownIcon aria-hidden="true" className="-mr-1 ml-1.5 h-5 w-5 text-gray-400" />
-            </MenuButton>
-
-            <MenuItems
-              transition
-              className="absolute right-0 z-10 -mr-1 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
-            >
-              <MenuItem>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
-                  Edit
-                </a>
-              </MenuItem>
-              <MenuItem>
-                <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
-                  View
-                </a>
-              </MenuItem>
-            </MenuItems>
-          </Menu>
         </div>
       </div>
-      <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6 w-full justify-between">
+      <div className="mt-2 flex flex-col sm:mt-2 sm:flex-row sm:flex-wrap sm:space-x-6 w-full justify-between">
         <div className="mt-2 flex items-center text-sm text-gray-500">
           <BriefcaseIcon aria-hidden="true" className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" />
           Full-time
@@ -88,30 +52,10 @@ export default function Jobcard() {
         </div>
       </div>
       <div className="w-full mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
-        <div className="mt-2 flex items-center text-sm text-gray-500">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.3" stroke="currentColor" className="size-5 mr-1">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
-          </svg>
-          Experience
-        </div>
         <div className="mt-2 flex text-sm text-gray-500">
-          <CalendarIcon aria-hidden="true" className="mr-1.5 ml-14 h-5 w-5 flex-shrink-0 text-gray-400" />
-          Closing on Jan 9, 2020
+          <ClockIcon aria-hidden="true" className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" />
+          10 days left
         </div>
-        {/* <div className="mt-2 flex items-center text-sm text-gray-500">
-          <CurrencyDollarIcon aria-hidden="true" className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" />
-          $120k &ndash; $140k
-        </div> */}
-      </div>
-      <div className="w-full mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
-        <div className="mt-2 flex text-sm text-gray-500">
-          <CalendarIcon aria-hidden="true" className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" />
-          Posted on Jan 9, 2020
-        </div>
-        {/* <div className="mt-2 flex items-center text-sm text-gray-500">
-          <CurrencyDollarIcon aria-hidden="true" className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-400" />
-          $120k &ndash; $140k
-        </div> */}
       </div>
       <div className="w-full mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap sm:space-x-6">
         <div className="mt-2 flex text-sm text-gray-500">
