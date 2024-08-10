@@ -14,17 +14,17 @@ export default function Jobcard() {
   return (
     <div className="lg:flex flex-col lg:items-center lg:justify-between mb-4 border-2 rounded border-solid border-slate-50 px-8 py-6 cursor-pointer transform transition shadow-md duration-7000 hover:rounded hover:border-slate-200">
       <div className="lg:flex w-full lg:justify-between">
-      <div className="lg:flex w-full">
-      <img className="inline-block h-10 w-10 rounded ring-2 ring-white" src="https://static.wixstatic.com/media/d2252d_4c1a1bda6a774bd68f789c0770fd16e5~mv2.png" alt=""/>
-      <div className="flex flex-col ml-3">
-        <h2 className="text-xl font-bold leading-7 text-gray-900 sm:truncate sm:text-2xl sm:tracking-tight">
-          Fullstack developer
-        </h2>
-        <div className="mt-1 flex items-center text-sm text-gray-500">
-          Let's find it
+        <div className="lg:flex w-full">
+          <img className="inline-block h-10 w-10 rounded ring-2 ring-white" src="https://static.wixstatic.com/media/d2252d_4c1a1bda6a774bd68f789c0770fd16e5~mv2.png" alt="" />
+          <div className="flex flex-col ml-3">
+            <h2 className="text-xl font-bold leading-7 text-gray-900 sm:truncate sm:text-2xl sm:tracking-tight">
+              Fullstack developer
+            </h2>
+            <div className="mt-1 flex items-center text-sm text-gray-500">
+              Let's find it
+            </div>
+          </div>
         </div>
-        </div>
-              </div>
         <div className="mt-5 flex lg:ml-4 lg:mt-0">
           <span className="sm:ml-3">
             <button
