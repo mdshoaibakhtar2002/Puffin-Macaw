@@ -20,11 +20,19 @@ export default function jobs() {
                     </span>
                 </div>
                 <input
-                id="price"
-                name="price"
+                id="searchbar"
+                name="searchbar"
+                placeholder="Search"
                 type="text"
                 className={styles.input}
-                />
+                    />
+                    <div className="cursor-pointer pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                        <span className="text-gray-500 sm:text-sm cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                        </span>
+                    </div>
             </div>
             </div>
             <div className="w-full grid md:flex-row p-4 sm:p-8 md:px-16 lg:p-10 md:grid-cols-[38%_minmax(50%,_1fr)] lg:grid-cols-[38%_minmax(50%,_1fr)] xl:grid-cols-[38%_minmax(50%,_1fr)] gap-8">
