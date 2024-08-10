@@ -34,25 +34,25 @@ const products = [
 {
   "name": "Software Engineer",
   "description": "Develop and maintain cutting-edge software solutions",
-  "href": "#",
+  "href": "/jobs",
   "icon": ChartPieIcon
 },
 {
   "name": "AI/ML Engineer",
   "description": "Design and implement machine learning models and AI systems",
-  "href": "#",
+  "href": "/jobs",
   "icon": FingerPrintIcon
 },
 {
   "name": "Data Engineer",
   "description": "Build and optimize data pipelines and manage data architecture",
-  "href": "#",
+  "href": "/jobs",
   "icon": SquaresPlusIcon
 },
 {
   "name": "DevOps",
   "description": "Ensure seamless deployment and integration of software",
-  "href": "#",
+  "href": "/jobs",
   "icon": ArrowPathIcon
 },
 {
@@ -140,16 +140,16 @@ export default function Navbar() {
                         </PopoverPanel>
                     </Popover>
 
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <a href="/playground" className="text-sm font-semibold leading-6 text-gray-900">
                         Playground
                     </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <a href="/learning" className="text-sm font-semibold leading-6 text-gray-900">
                         Learning
                     </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <a href="/reviews" className="text-sm font-semibold leading-6 text-gray-900">
                         Company Reviews
                     </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                    <a href="/hackathons" className="text-sm font-semibold leading-6 text-gray-900">
                         Hackathons
                     </a>
                 </PopoverGroup>
@@ -202,25 +202,25 @@ export default function Navbar() {
                                     </DisclosurePanel>
                                 </Disclosure>
                                 <a
-                                    href="#"
+                                    href="/playground"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
                                     Playground
                                 </a>
                                 <a
-                                    href="#"
+                                    href="/learning"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
                                     Learning
                                 </a>
                                 <a
-                                    href="#"
+                                    href="/reviews"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
                                     Company Reviews
                                 </a>
                                 <a
-                                    href="#"
+                                    href="/hackathons"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
                                     Hackathons
