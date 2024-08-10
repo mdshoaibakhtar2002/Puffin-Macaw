@@ -5,6 +5,8 @@ import { createContext, useState, useContext, ReactNode } from 'react';
 interface MyContextType {
     state: boolean;
     setState: React.Dispatch<React.SetStateAction<boolean>>;
+    activeJob: string,
+    setActiveJob: React.Dispatch<React.SetStateAction<string>>;
 }
 
 // Provide a default value (could be null or a default object)
@@ -13,9 +15,10 @@ const MyContext = createContext<MyContextType | undefined>(undefined);
 // Create a provider component
 export function MyProvider({ children }: { children: ReactNode }) {
     const [state, setState] = useState(false);
+    const [activeJob, setActiveJob] = useState('iu3ju0hdiz');
 
     return (
-        <MyContext.Provider value={{ state, setState }}>
+        <MyContext.Provider value={{ state, setState, activeJob, setActiveJob }}>
             {children}
         </MyContext.Provider>
     );

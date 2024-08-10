@@ -6,14 +6,16 @@ import {
   ClockIcon,
 } from '@heroicons/react/20/solid'
 import {company_mock_data} from '../mockdata/MockData'
+import { useMyContext } from '@/app/context/MyContext';
 
 export default function Jobcard() {
+  const { setActiveJob } = useMyContext();
   return (
     <>
       {
         company_mock_data.map((each_company, index) => {
           return (
-            <div key={index} className="lg:flex flex-col lg:items-center lg:justify-between mb-4 border-2 rounded border-solid border-slate-50 px-8 py-6 cursor-pointer transform transition shadow-md duration-7000 hover:rounded hover:border-slate-200">
+            <div key={index} onClick={() => setActiveJob(each_company.job_id)} className="lg:flex flex-col lg:items-center lg:justify-between mb-4 border-2 rounded border-solid border-slate-50 px-8 py-6 cursor-pointer transform transition shadow-md duration-7000 hover:rounded hover:border-slate-200">
               <div className="lg:flex w-full lg:justify-between">
                 <div className="lg:flex w-full">
                   <img className="inline-block h-10 w-10 rounded ring-2 ring-white" src={each_company.logo} alt="" />
