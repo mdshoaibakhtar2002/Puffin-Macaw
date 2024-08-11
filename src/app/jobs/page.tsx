@@ -5,6 +5,8 @@ import JobDetails from '../../components/JobDetails';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 import styles from '../Custom.module.css';
+import JobCardSkelton from '@/components/JobCardSkelton';
+import JobDetailsSkeleton from '@/components/JobDetailsSkeleton';
 
 export default function jobs() {
     return (
@@ -37,9 +39,11 @@ export default function jobs() {
             </div>
             <div className="w-full grid md:flex-row p-4 sm:p-8 md:px-16 lg:p-10 md:grid-cols-[38%_minmax(50%,_1fr)] lg:grid-cols-[38%_minmax(50%,_1fr)] xl:grid-cols-[38%_minmax(50%,_1fr)] gap-8">
                 <div className="max-h-[85vh] overflow-scroll no-scrollbar">
+                    {/* <JobCardSkelton/> */}
                     <Jobcard />
                 </div>
                 <div className="max-h-[85vh] overflow-scroll no-scrollbar sm:none md:none lg:none xl:none">
+                    {/* <JobDetailsSkeleton /> */}
                     <JobDetails />
                 </div>
             </div>
