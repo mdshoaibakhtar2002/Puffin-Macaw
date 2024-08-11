@@ -7,11 +7,13 @@ import Navbar from '../../components/Navbar';
 import styles from '../Custom.module.css';
 import JobCardSkelton from '@/components/JobCardSkelton';
 import JobDetailsSkeleton from '@/components/JobDetailsSkeleton';
+import Toast from '@/components/Toast';
 
 export default function jobs() {
     return (
         <div className="max-h-[85vh]">
-            <Navbar/>
+            <Navbar />
+            <Toast/>
             <div className="relative mt-2 w-full flex justify-end">
                 {/* <div className="relative rounded-md w-1/4 mr-10">
                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
