@@ -5,6 +5,8 @@ import { createContext, useState, useContext, ReactNode } from 'react';
 interface MyContextType {
     state: boolean;
     setState: React.Dispatch<React.SetStateAction<boolean>>;
+    loader: boolean;
+    setLoader: React.Dispatch<React.SetStateAction<boolean>>;
     activeJob: string,
     setActiveJob: React.Dispatch<React.SetStateAction<string>>;
     loadSkeleton: string;
@@ -17,11 +19,12 @@ const MyContext = createContext<MyContextType | undefined>(undefined);
 // Create a provider component
 export function MyProvider({ children }: { children: ReactNode }) {
     const [state, setState] = useState(false);
+    const [loader, setLoader] = useState(false);
     const [activeJob, setActiveJob] = useState('iu3ju0hdiz');
     const [loadSkeleton, setLoadSkeleton] = useState('all');
 
     return (
-        <MyContext.Provider value={{ state, setState, activeJob, setActiveJob, loadSkeleton , setLoadSkeleton}}>
+        <MyContext.Provider value={{ state, setState, activeJob, setActiveJob, loadSkeleton, setLoadSkeleton, loader, setLoader }}>
             {children}
         </MyContext.Provider>
     );

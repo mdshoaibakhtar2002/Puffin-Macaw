@@ -1,13 +1,29 @@
-
+'use client'
+import Link from 'next/link';
+import { useMyContext } from '../context/MyContext';
 import styles from '../Custom.module.css';
-import Link from 'next/link'
+import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 export default function Login() {
+    const { setLoader } = useMyContext();
+    const [authenticating, setAuthenticating] = useState(false);
+    const router = useRouter();
+
+    const handleLogin = () => {
+        setAuthenticating(true);
+        setTimeout(() => {
+            router.push('/');
+            setAuthenticating(false);
+        }, 800);
+    };
+
     return (
         <div className="w-full flex justify-center flex-col items-center h-[85vh]">
             <div className="w-1/2 flex justify-center flex-col items-center p-4">
                 <div className="relative rounded-md shadow-sm w-8/12 mt-4">
-                    <label htmlFor="price" className="block text-sm font-medium leading-6 text-gray-900">
+                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                         Email address
                     </label>
                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -19,6 +35,7 @@ export default function Login() {
                         </span>
                     </div>
                     <input
+                        disabled={authenticating}
                         id="email"
                         name="email"
                         type="text"
@@ -26,7 +43,7 @@ export default function Login() {
                     />
                 </div>
                 <div className="relative rounded-md shadow-sm w-8/12 mt-4">
-                    <label htmlFor="price" className="block text-sm font-medium leading-6 text-gray-900">
+                    <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
                         Password
                     </label>
                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -38,20 +55,33 @@ export default function Login() {
                         </span>
                     </div>
                     <input
+                        disabled={authenticating}
                         id="password"
                         name="password"
-                        type="text"
+                        type="password"
                         className={styles.input}
                     />
                 </div>
 
                 <div className="w-8/12 mt-6 text-center">
-                    <button
-                        type="submit"
-                        className="block w-full rounded-md bg-gray-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-820 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-820"
-                    >
-                        Log in <span aria-hidden="true">&rarr;</span>
-                    </button>
+                    {authenticating ?
+                        <button
+                            type="submit"
+                            disabled
+                            className="flex cursor-wait justify-center items-center w-full rounded-md bg-gray-700 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-820"
+                        >
+                            Authenticating
+                            <span className={styles.authenticating_loader} aria-hidden="true" />
+                        </button> :
+                        <button
+                            type="submit"
+                            onClick={handleLogin}
+                            className="flex justify-center items-center w-full rounded-md bg-gray-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-820"
+                        >
+                            Log in
+                            <span className='ml-2' aria-hidden="true">&rarr;</span>
+                        </button>}
+
                 </div>
                 <div className="w-8/12 mt-6 text-center flex justify-between">
                     <Link href='/' className='underline underline-offset-2 mt-4 text-sm'>Forgot password?</Link>
