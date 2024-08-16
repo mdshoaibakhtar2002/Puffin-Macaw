@@ -8,12 +8,20 @@ import styles from '../Custom.module.css';
 import JobCardSkelton from '@/components/JobCardSkelton';
 import JobDetailsSkeleton from '@/components/JobDetailsSkeleton';
 import Toast from '@/components/Toast';
+import { useMyContext } from '../context/MyContext';
+import { useEffect } from 'react';
 
 export default function jobs() {
+    const { loadSkeleton, setLoadSkeleton} = useMyContext();
+    useEffect(() => {
+        setTimeout(() => {
+            setLoadSkeleton('none');
+        },500)
+    },[])
     return (
         <div className="max-h-[85vh]">
             <Navbar />
-            <Toast/>
+            {/* <Toast/> */}
             <div className="relative mt-2 w-full flex justify-end">
                 {/* <div className="relative rounded-md w-1/4 mr-10">
                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -41,12 +49,10 @@ export default function jobs() {
             </div>
             <div className="w-full grid md:flex-row p-4 sm:p-8 md:px-16 lg:p-10 md:grid-cols-[38%_minmax(50%,_1fr)] lg:grid-cols-[38%_minmax(50%,_1fr)] xl:grid-cols-[38%_minmax(50%,_1fr)] gap-8">
                 <div className="max-h-[85vh] overflow-scroll no-scrollbar">
-                    {/* <JobCardSkelton/> */}
-                    <Jobcard />
+                    {loadSkeleton === 'all' ? <JobCardSkelton/> : <Jobcard />}
                 </div>
                 <div className="max-h-[85vh] overflow-scroll no-scrollbar sm:none md:none lg:none xl:none">
-                    {/* <JobDetailsSkeleton /> */}
-                    <JobDetails />
+                    {loadSkeleton === 'all' ? <JobDetailsSkeleton /> : <JobDetails />}
                 </div>
             </div>
             <Footer />

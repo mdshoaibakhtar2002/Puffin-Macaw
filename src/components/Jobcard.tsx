@@ -7,17 +7,24 @@ import {
 } from '@heroicons/react/20/solid'
 import {company_mock_data} from '../mockdata/MockData'
 import { useMyContext } from '@/app/context/MyContext';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Jobcard() {
-  const { setActiveJob } = useMyContext();
+  const { setActiveJob, setLoadSkeleton} = useMyContext();
   const [apply, setApply] = useState('');
+  useEffect(() => {
+    setTimeout(() => {
+      if (apply !== '') {
+        setApply('');
+      }
+    }, 500);
+  }, [apply])
   return (
     <>
       {
         company_mock_data.map((each_company, index) => {
           return (
-            <div key={index} onClick={() => setActiveJob(each_company.job_id)} className="lg:flex flex-col lg:items-center lg:justify-between mb-4 border-2 rounded border-solid border-slate-50 px-8 py-6 cursor-pointer transform transition shadow-md duration-7000 hover:rounded hover:border-slate-200">
+            <div key={index} onClick={() => {setActiveJob(each_company.job_id), setLoadSkeleton('details')}} className="lg:flex flex-col lg:items-center lg:justify-between mb-4 border-2 rounded border-solid border-slate-50 px-8 py-6 cursor-pointer transform transition shadow-md duration-7000 hover:rounded hover:border-slate-200">
               <div className="lg:flex w-full lg:justify-between">
                 <div className="lg:flex w-full">
                   <img className="inline-block h-10 w-10 rounded ring-2 ring-white" src={each_company.logo} alt="" />
@@ -33,7 +40,7 @@ export default function Jobcard() {
                 <div className="mt-5 flex lg:ml-4 lg:mt-0">
                   <span className="sm:ml-3">
                     <button
-                      onClick={() => setApply(each_company.job_id)}
+                      onClick={() => {setApply(each_company.job_id), setLoadSkeleton('details')}}
                       type="button"
                       disabled={apply === each_company.job_id}
                       className={apply === each_company.job_id ? "inline-flex items-center rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm" : "inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"}
