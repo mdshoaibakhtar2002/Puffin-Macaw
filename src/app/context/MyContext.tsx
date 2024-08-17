@@ -11,6 +11,8 @@ interface MyContextType {
     setActiveJob: React.Dispatch<React.SetStateAction<string>>;
     loadSkeleton: string;
     setLoadSkeleton: React.Dispatch<React.SetStateAction<string>>;
+    userLoggedInDetails: object;
+    setUserLoggedInDetails: React.Dispatch<React.SetStateAction<object>>;
 }
 
 // Provide a default value (could be null or a default object)
@@ -22,9 +24,13 @@ export function MyProvider({ children }: { children: ReactNode }) {
     const [loader, setLoader] = useState(false);
     const [activeJob, setActiveJob] = useState('iu3ju0hdiz');
     const [loadSkeleton, setLoadSkeleton] = useState('all');
+    const [userLoggedInDetails, setUserLoggedInDetails] = useState({
+        loggedIn: true,
+        email: 'test@gmail.com'
+    });
 
     return (
-        <MyContext.Provider value={{ state, setState, activeJob, setActiveJob, loadSkeleton, setLoadSkeleton, loader, setLoader }}>
+        <MyContext.Provider value={{ state, setState, activeJob, setActiveJob, loadSkeleton, setLoadSkeleton, loader, setLoader, userLoggedInDetails, setUserLoggedInDetails }}>
             {children}
         </MyContext.Provider>
     );
