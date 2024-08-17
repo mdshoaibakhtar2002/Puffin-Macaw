@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-export default function Login() {
+export default function Login(dialog) {
     const { setLoader } = useMyContext();
     const [authenticating, setAuthenticating] = useState(false);
     const router = useRouter();
@@ -21,8 +21,8 @@ export default function Login() {
 
     return (
         <div className="w-full flex justify-center flex-col items-center h-[85vh]">
-            <div className="w-1/2 flex justify-center flex-col items-center p-4">
-                <div className="relative rounded-md shadow-sm w-8/12 mt-4">
+            <div className={dialog['dialog'] ? "w-full flex justify-center flex-col items-center p-4" : "w-1/2 flex justify-center flex-col items-center p-4"}>
+                <div className="relative rounded-md shadow-sm w-8/12">
                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                         Email address
                     </label>

@@ -26,6 +26,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, ChevronUpIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
+import Modal from './Modal'
 
 const products = [
     {
@@ -73,9 +74,11 @@ const callsToAction = [
 
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [open, setOpen] = useState(false)
 
     return (
         <header className="bg-white">
+            <Modal open={open} setOpen={setOpen} />
             <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-0">
                 <div className="flex lg:flex-1">
                     <a href="/" className="-m-1.5 p-1.5">
@@ -156,12 +159,12 @@ export default function Navbar() {
                         Hackathons
                     </a>
                 </PopoverGroup>
-                {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="/login" className="text-sm font-semibold leading-6 text-gray-900">
+                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <button onClick={() => setOpen(true)} className="text-sm font-semibold leading-6 text-gray-900">
                         Log in <span aria-hidden="true">&rarr;</span>
-                    </a>
-                </div> */}
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    </button>
+                </div>
+                {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <button
                         type="button"
                         className="relative rounded-full p-1 mr-2 text-gray-400 hover:text-gray focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -171,7 +174,6 @@ export default function Navbar() {
                         <BellIcon aria-hidden="true" className="h-6 w-6" />
                     </button>
 
-                    {/* Profile dropdown */}
                     <Menu as="div" className="relative ml-3">
                             <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                 <span className="absolute -inset-1.5" />
@@ -203,7 +205,7 @@ export default function Navbar() {
                             </MenuItem>
                         </MenuItems>
                     </Menu>
-                </div>
+                </div> */}
             </nav>
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                 <div className="fixed inset-0 z-10" />
