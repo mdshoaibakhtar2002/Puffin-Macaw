@@ -6,7 +6,7 @@ export default function Banner() {
     const [hideBanner, setHideBanner] = useState(true)
     return (
         <>
-        { hideBanner && <div className="absolute w-full isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+        { hideBanner && <div className="mt-16 absolute w-full isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
             <div
                 aria-hidden="true"
                 className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
@@ -33,11 +33,11 @@ export default function Banner() {
             </div>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 <p className="text-sm leading-6 text-gray-900">
-                    <strong className="font-semibold">GeneriCon 2023</strong>
-                    <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline h-0.5 w-0.5 fill-current">
+                    {/* <strong className="font-semibold">GeneriCon 2023</strong> */}
+                    {/* <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline h-0.5 w-0.5 fill-current">
                         <circle r={1} cx={1} cy={1} />
-                    </svg>
-                    Join us in Denver from June 7 – 9 to see what’s coming next.
+                    </svg> */}
+                    Join us in Kolkata from August 7 – 9 to see what’s coming next.
                 </p>
                 <a
                     href="#"

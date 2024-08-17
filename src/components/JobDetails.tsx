@@ -11,12 +11,20 @@ import {
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { useMyContext } from '@/app/context/MyContext';
 import { company_mock_data } from '../mockdata/MockData'
+import { useEffect } from 'react';
+import JobDetailsSkeleton from './JobDetailsSkeleton';
 
 export default function JobDetails() {
-    const { activeJob } = useMyContext();
+    const { loadSkeleton, setLoadSkeleton, activeJob } = useMyContext();
+    useEffect(() => {
+        setTimeout(() => {
+                setLoadSkeleton('none');
+            }, 500)
+    }, [loadSkeleton])
     return (
         <div>
-            {company_mock_data.map((each_company_data, index) => {
+            {loadSkeleton === 'details' ? <JobDetailsSkeleton/> : 
+            company_mock_data.map((each_company_data, index) => {
                 return (
                     each_company_data.job_id === activeJob &&
                         <div key={index} className="lg:flex flex-col lg:items-center lg:justify-between mb-4 border-2 rounded border-solid border-slate-50 px-8 py-6 cursor-pointer transform transition shadow-md duration-7000 hover:rounded hover:border-slate-200">

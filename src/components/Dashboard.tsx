@@ -13,6 +13,7 @@ import Testimonials from './Testimonials';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import img from "../../dashboard_image_1.jpg"
+import Device from './Device';
 const features = [
     {
         name: 'Your Next Career Opportunity Awaits: ',
@@ -35,10 +36,8 @@ const features = [
 export default function Dashboard() {
     return (
         <div>
-            {/* <div className="pt-16">
-            <Banner />
-        </div> */}
-        <Navbar />
+            {/* <Banner /> */}
+            <Navbar />
             <div className="overflow-hidden bg-white py-16 sm:py-16">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">

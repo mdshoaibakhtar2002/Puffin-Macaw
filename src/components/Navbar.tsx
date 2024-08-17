@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+import { BellIcon } from '@heroicons/react/24/outline'
 import {
     Dialog,
     DialogPanel,
@@ -23,44 +25,47 @@ import {
     ArrowDownOnSquareStackIcon
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, ChevronUpIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
+import Modal from './Modal'
+import { useMyContext } from '@/app/context/MyContext'
 
 const products = [
     {
-  "name": "Internships",
-  "description": "Gain hands-on experience and kickstart your career",
-  "href": "/jobs",
-  "icon": CursorArrowRaysIcon
-},
-{
-  "name": "Software Engineer",
-  "description": "Develop and maintain cutting-edge software solutions",
-  "href": "/jobs",
-  "icon": ChartPieIcon
-},
-{
-  "name": "AI/ML Engineer",
-  "description": "Design and implement machine learning models and AI systems",
-  "href": "/jobs",
-  "icon": FingerPrintIcon
-},
-{
-  "name": "Data Engineer",
-  "description": "Build and optimize data pipelines and manage data architecture",
-  "href": "/jobs",
-  "icon": SquaresPlusIcon
-},
-{
-  "name": "DevOps",
-  "description": "Ensure seamless deployment and integration of software",
-  "href": "/jobs",
-  "icon": ArrowPathIcon
-},
-{
-  "name": "Quality Assurance",
-  "description": "Ensure the highest standards of software quality through rigorous testing",
-  "href": "#",
-  "icon": ArrowDownOnSquareStackIcon
-}
+        "name": "Internships",
+        "description": "Gain hands-on experience and kickstart your career",
+        "href": "/jobs",
+        "icon": CursorArrowRaysIcon
+    },
+    {
+        "name": "Software Engineer",
+        "description": "Develop and maintain cutting-edge software solutions",
+        "href": "/jobs",
+        "icon": ChartPieIcon
+    },
+    {
+        "name": "AI/ML Engineer",
+        "description": "Design and implement machine learning models and AI systems",
+        "href": "/jobs",
+        "icon": FingerPrintIcon
+    },
+    {
+        "name": "Data Engineer",
+        "description": "Build and optimize data pipelines and manage data architecture",
+        "href": "/jobs",
+        "icon": SquaresPlusIcon
+    },
+    {
+        "name": "DevOps",
+        "description": "Ensure seamless deployment and integration of software",
+        "href": "/jobs",
+        "icon": ArrowPathIcon
+    },
+    {
+        "name": "Quality Assurance",
+        "description": "Ensure the highest standards of software quality through rigorous testing",
+        "href": "#",
+        "icon": ArrowDownOnSquareStackIcon
+    }
 
 ]
 const callsToAction = [
@@ -70,10 +75,13 @@ const callsToAction = [
 
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [open, setOpen] = useState(false)
+    const { userLoggedInDetails } = useMyContext();
 
     return (
         <header className="bg-white">
-            <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+            <Modal open={open} setOpen={setOpen} />
+            <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-0">
                 <div className="flex lg:flex-1">
                     <a href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
@@ -99,7 +107,6 @@ export default function Navbar() {
                         >
                             Jobs
                             <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
-                            {/* <ChevronUpIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" /> */}
                         </PopoverButton>
 
                         <PopoverPanel
@@ -125,18 +132,6 @@ export default function Navbar() {
                                     </div>
                                 ))}
                             </div>
-                            {/* <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                                {callsToAction.map((item) => (
-                                    <a
-                                        key={item.name}
-                                        href={item.href}
-                                        className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                                    >
-                                        <item.icon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
-                                        {item.name}
-                                    </a>
-                                ))}
-                            </div> */}
                         </PopoverPanel>
                     </Popover>
 
@@ -153,11 +148,54 @@ export default function Navbar() {
                         Hackathons
                     </a>
                 </PopoverGroup>
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="/login" className="text-sm font-semibold leading-6 text-gray-900">
-                        Log in <span aria-hidden="true">&rarr;</span>
-                    </a>
-                </div>
+                {!userLoggedInDetails['loggedIn'] ?
+                    <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                        <button onClick={() => setOpen(true)} className="text-sm font-semibold leading-6 text-gray-900">
+                            Log in <span aria-hidden="true">&rarr;</span>
+                        </button>
+                    </div> :
+                    <div className="hidden lg:flex lg:flex-1 lg:justify-end absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                        <button
+                            type="button"
+                            className="relative rounded-full p-1 mr-2 text-gray-400 hover:text-gray focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        >
+                            <span className="absolute -inset-1.5" />
+                            <span className="sr-only">View notifications</span>
+                            <BellIcon aria-hidden="true" className="h-6 w-6" />
+                        </button>
+
+                        <Menu as="div" className="relative ml-3">
+                            <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                <span className="absolute -inset-1.5" />
+                                <span className="sr-only">Open user menu</span>
+                                <img
+                                    alt=""
+                                    src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
+                                    className="h-8 w-8 rounded-full"
+                                />
+                            </MenuButton>
+                            <MenuItems
+                                transition
+                                className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                            >
+                                <MenuItem>
+                                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                                        Your Profile
+                                    </Link>
+                                </MenuItem>
+                                <MenuItem>
+                                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                                        Settings
+                                    </Link>
+                                </MenuItem>
+                                <MenuItem>
+                                    <Link href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                                        Log Out
+                                    </Link>
+                                </MenuItem>
+                            </MenuItems>
+                        </Menu>
+                    </div>}
             </nav>
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                 <div className="fixed inset-0 z-10" />
@@ -180,6 +218,7 @@ export default function Navbar() {
                             <XMarkIcon aria-hidden="true" className="h-6 w-6" />
                         </button>
                     </div>
+
                     <div className="mt-6 flow-root">
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6">
@@ -226,14 +265,34 @@ export default function Navbar() {
                                     Hackathons
                                 </a>
                             </div>
-                            <div className="py-6">
+                            {!userLoggedInDetails['loggedIn'] ? <div className="py-6">
                                 <a
                                     href="#"
                                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
                                     Log in
                                 </a>
-                            </div>
+                            </div> :
+                                <div className="py-6">
+                                    <a
+                                        href="#"
+                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    >
+                                        Your Profile
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    >
+                                        Settings
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                    >
+                                        Log Out
+                                    </a>
+                                </div>}
                         </div>
                     </div>
                 </DialogPanel>
