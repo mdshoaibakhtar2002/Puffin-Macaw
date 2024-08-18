@@ -7,17 +7,57 @@ import { useRouter } from 'next/navigation';
 
 export default function Login() {
     const [authenticating, setAuthenticating] = useState(false);
+    const [data, setData] = useState({
+        email: "",
+        phone_number: "",
+        first_name: "",
+        last_name: "",
+        address: "",
+        city: "",
+        state: "",
+        pincode: "",
+        is_organization: "",
+        password: "",
+        confirm_password: "",
+        job_id: []
+    });
     const router = useRouter();
 
     const handleCreateAccount = () => {
         setAuthenticating(true);
-        setTimeout(() => {
-            router.push('/');
-            setAuthenticating(false);
-        }, 800);
+        // fetch('http://127.0.0.1:8000/v1/api/createuser', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(data),
+        // }).then(res => {
+        //     if (res['status'] === 200) {
+        //         setTimeout(() => {
+        //             router.push('/');
+        //             setAuthenticating(false);
+        //         }, 800);
+        //     } else {
+
+        //     }
+        // }).catch(err => {
+        //     console.log(err)
+        // })
+                setTimeout(() => {
+                    router.push('/login');
+                    setAuthenticating(false);
+                }, 800);
     };
+
+    const handleOnChange = (e:any) => {
+        e.preventDefault();
+        const newData = { ...data };
+        newData[e.target.name] = e.target.value;
+        setData(newData);
+    }
+    console.log(data);
     return (
-        <div className="w-full flex justify-center flex-col items-center h-[100vh]">
+        <div className="w-full flex justify-center flex-col items-center h-screen">
             <div className="flex justify-center flex-col items-center md:p-4 sm:w-4/12 md: w-4/12 lg: w-11/12">
                 <div className="relative rounded-md shadow-sm w-full px-2">
                     <label htmlFor="price" className="block text-sm font-medium leading-6 text-gray-900">
@@ -33,10 +73,11 @@ export default function Login() {
                     </div>
                     <input
                         disabled={authenticating}
-                        id="email"
-                        name="email"
+                        id="first_name"
+                        name="first_name"
                         type="text"
                         className={styles.input}
+                        onChange={(e) => handleOnChange(e)}
                     />
                 </div>
                 <div className="relative rounded-md shadow-sm mt-4 w-full px-2">
@@ -57,6 +98,7 @@ export default function Login() {
                         name="email"
                         type="text"
                         className={styles.input}
+                        onChange={(e) => handleOnChange(e)}
                     />
                 </div>
                 <div className="relative rounded-md shadow-sm mt-4 w-full px-2">
@@ -72,10 +114,11 @@ export default function Login() {
                     </div>
                     <input
                         disabled={authenticating}
-                        id="email"
-                        name="email"
+                        id="phone_number"
+                        name="phone_number"
                         type="text"
                         className={styles.input}
+                        onChange={(e) => handleOnChange(e)}
                     />
                 </div>
                 <div className="relative rounded-md shadow-sm mt-4 w-full px-2">
@@ -96,6 +139,7 @@ export default function Login() {
                         name="password"
                         type="text"
                         className={styles.input}
+                        onChange={(e) => handleOnChange(e)}
                     />
                 </div>
                 <div className="relative rounded-md shadow-sm mt-4 w-full px-2">
@@ -112,15 +156,16 @@ export default function Login() {
                     </div>
                     <input
                         disabled={authenticating}
-                        id="password"
-                        name="password"
+                        id="confirm_password"
+                        name="confirm_password"
                         type="password"
                         className={styles.input}
+                        onChange={(e) => handleOnChange(e)}
                     />
                 </div>
 
                 <div className="w-8/12 mt-6 flex items-center mb-2 w-full px-2">
-                    <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+                    <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                     <label className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" className="text-blue-600 dark:text-blue-500 hover:underline">terms and conditions</a>.</label>
                 </div>
 

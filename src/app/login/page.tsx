@@ -20,7 +20,7 @@ export default function Login(dialog) {
     };
 
     return (
-        <div className="w-full flex justify-center flex-col items-center h-[85vh]">
+        <div className="w-full flex justify-center flex-col items-center h-screen sm:h-screen">
             <div className={dialog['dialog'] ? "w-8/12 flex justify-center flex-col items-center p-4" : "flex justify-center flex-col items-center md:p-4 sm:w-4/12 md: w-4/12 lg: w-11/12"}>
                 <div className="relative rounded-md shadow-sm w-full px-2">
                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -63,7 +63,7 @@ export default function Login(dialog) {
                     />
                 </div>
 
-                <div className="w-full sm:w-full px-2 md:w-full mt-6 text-center">
+                <div className="w-full sm:w-full px-2 md:w-full mt-8 text-center">
                     {authenticating ?
                         <button
                             type="submit"
@@ -83,7 +83,7 @@ export default function Login(dialog) {
                         </button>}
 
                 </div>
-                <div className="w-full sm:w-full px-4 md:w-full mt-6 text-center flex-col sm:flex-col md:flex-row flex justify-between">
+                <div className="w-full sm:w-full px-2 md:w-full mt-6 text-center flex-col sm:flex-col md:flex-row flex justify-between">
                     <Link href='/' className='underline underline-offset-2 mt-4 text-sm'>Forgot password?</Link>
                     <p className="text-sm mt-4">Don't have an account? <Link href='/signup' className='underline underline-offset-2 mt-4 text-sm'>Create new account</Link></p>
                 </div>
